@@ -7,7 +7,7 @@ namespace AutomobileShowroomFixture
     public class ShowroomManagerFixture
     {
         [Fact]
-        public void Selling_a_car()
+        public void SellCar_ShouldRemoveCarFromStorage_WhenValidInput()
         {
             VehicleStorage storage = new VehicleStorage();
             Car car = new Car() { Id = 1 };
@@ -58,6 +58,18 @@ namespace AutomobileShowroomFixture
             manager.SendForMaintainence(car, 100);
 
             Assert.Equal("Maruti was test driven.", manager.TestDrive(car));
+        }
+
+        [Fact]
+        public void Testing_earnings_for_car()
+        {
+            VehicleStorage storage = new VehicleStorage();
+            Car car1 = new Car() { Id = 1, Name = "Maruti", SellPrice = 100 };
+            Car car2 = new Car() { Id = 2, Name = "Maruti", LeasePricePerDay = 10 };
+            Car car3 = new Car() { Id = 3, Name = "Maruti" };
+            Register register = new Register();
+            ShowroomManager manager = new ShowroomManager(storage, register);
+
         }
     }
 }
