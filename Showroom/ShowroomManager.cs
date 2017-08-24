@@ -16,10 +16,10 @@ namespace Showroom
             _register = register ?? new Register();
         }
 
-        public void Sell(IVehicle vehicle, decimal price)
+        public void Sell(IVehicle vehicle)
         {
             _storage.Remove(vehicle);
-            _register.SoldList.Add(new RegisterEntry(vehicle, price));
+            _register.SoldList.Add(new RegisterEntry(vehicle, vehicle.SellPrice));
         }
 
         public void Rent(IVehicle vehicle, int noOfDays)
