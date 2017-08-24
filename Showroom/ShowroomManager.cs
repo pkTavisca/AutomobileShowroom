@@ -79,5 +79,23 @@ namespace Showroom
             }
             return totalSales;
         }
+
+        public string TodaysServiceReport()
+        {
+            string report = string.Empty;
+            foreach (var registerEntry in _register.SoldList)
+            {
+                report += $"Sold id-{registerEntry.Vehicle.Id} for {registerEntry.Price}\n";
+            }
+            foreach (var registerEntry in _register.RentedList)
+            {
+                report += $"Rented id-{registerEntry.Vehicle.Id} for {registerEntry.Price}\n";
+            }
+            foreach (var registerEntry in _register.MaintainenceList)
+            {
+                report += $"Repaired id-{registerEntry.Vehicle.Id} for {registerEntry.Price}\n";
+            }
+            return report;
+        }
     }
 }
