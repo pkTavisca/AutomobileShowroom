@@ -78,5 +78,29 @@ namespace AutomobileShowroomFixture
 
             Assert.Equal(170, manager.GetTotalEarningForToday());
         }
+
+        [Fact]
+        public void ServiceReport_ShouldReturnString_WhenValidInput()
+        {
+            VehicleStorage storage = new VehicleStorage();
+            Car car1 = new Car() { Id = 1, Name = "Maruti", SellPrice = 100 };
+            Car car2 = new Car() { Id = 2, Name = "Maruti", LeasePricePerDay = 10 };
+            Car car3 = new Car() { Id = 3, Name = "Maruti" };
+            storage.Add(car1);
+            storage.Add(car2);
+            Register register = new Register();
+            ShowroomManager manager = new ShowroomManager(storage, register);
+
+            manager.Sell(car1);
+            manager.Rent(car2, 2);
+            manager.SendForMaintainence(car3, 50);
+
+            string report = "";
+            report += $"Sold id-{ car1.Id} for { car1.SellPrice}\n";
+            report += $"Rented id-{car2.Id} for 20\n";
+            report += $"Repaired id-{car3.Id} for 50\n";
+
+            Assert.Equal(report, manager.TodaysServiceReport());
+        }
     }
 }
