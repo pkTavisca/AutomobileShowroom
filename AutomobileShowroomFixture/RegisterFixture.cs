@@ -21,5 +21,13 @@ namespace AutomobileShowroomFixture
             register.RentedList.Add(new Invoice(new Car() { LeasePricePerDay = 10 }, 100));
             Assert.Equal(100, register.GetTotalRentSaleForToday());
         }
+
+        [Fact]
+        public void GetTotalRepairedForToday_ShouldReturnTodaysRepairedSale_WhenValidInput()
+        {
+            Register register = new Register();
+            register.MaintainenceList.Add(new Invoice(new Car() { LeasePricePerDay = 10 }, 100));
+            Assert.Equal(100, register.GetTotalMaintainenceSaleForToday());
+        }
     }
 }
