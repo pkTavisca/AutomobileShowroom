@@ -13,9 +13,9 @@ namespace Showroom.VehicleModels
 
         public string Name { get; }
 
-        public int LeasePricePerDay { get; }
+        public decimal LeasePricePerDay { get; }
 
-        public int SellPrice { get; }
+        public decimal SellPrice { get; }
 
         public int CompareTo(IVehicle other)
         {

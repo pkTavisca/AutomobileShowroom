@@ -16,25 +16,27 @@ namespace Showroom
             _register = register ?? new Register();
         }
 
-        public void Sell(IVehicle vehicle)
+        public void Sell(IVehicle vehicle, decimal price)
         {
             _storage.Remove(vehicle);
-            _register.SoldList.Add(new RegisterEntry(vehicle));
+            _register.SoldList.Add(new RegisterEntry(vehicle, price));
         }
 
         public void Rent(IVehicle vehicle, int noOfDays)
         {
-
+            _storage.Remove(vehicle);
+            _register.RentedList.Add(new RegisterEntry(vehicle, noOfDays * vehicle.LeasePricePerDay));
         }
 
-        public void SendForMaintainence(IVehicle vehicle)
+        public void SendForMaintainence(IVehicle vehicle, decimal repairCost)
         {
-
+            _storage.Add(vehicle);
+            _register.MaintainenceList.Add(new RegisterEntry(vehicle, repairCost));
         }
 
-        public bool TestDrive(IVehicle vehicle)
+        public string TestDrive(IVehicle vehicle)
         {
-            return true;
+            return $"{vehicle.Name} was test driven.";
         }
     }
 }

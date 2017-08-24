@@ -9,11 +9,13 @@ namespace Showroom
     {
         public DateTime Date { get; }
         public IVehicle Vehicle { get; }
+        public decimal Price { get; }
 
-        public RegisterEntry(IVehicle vehicle)
+        public RegisterEntry(IVehicle vehicle, decimal Price)
         {
             Vehicle = vehicle;
             Date = DateTime.Now;
+            this.Price = Price;
         }
     }
 }

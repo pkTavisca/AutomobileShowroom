@@ -9,7 +9,7 @@ namespace Showroom.Contracts
         int Id { get; }
         string Name { get; }
         string Company { get; }
-        int LeasePricePerDay { get; }
-        int SellPrice { get; }
+        decimal LeasePricePerDay { get; }
+        decimal SellPrice { get; }
     }
 }
