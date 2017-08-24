@@ -19,19 +19,19 @@ namespace Showroom
         public void Sell(IVehicle vehicle)
         {
             _storage.Remove(vehicle);
-            _register.SoldList.Add(new RegisterEntry(vehicle, vehicle.SellPrice));
+            _register.SoldList.Add(new Invoice(vehicle, vehicle.SellPrice));
         }
 
         public void Rent(IVehicle vehicle, int noOfDays)
         {
             _storage.Remove(vehicle);
-            _register.RentedList.Add(new RegisterEntry(vehicle, noOfDays * vehicle.LeasePricePerDay));
+            _register.RentedList.Add(new Invoice(vehicle, noOfDays * vehicle.LeasePricePerDay));
         }
 
         public void SendForMaintainence(IVehicle vehicle, decimal repairCost)
         {
             _storage.Add(vehicle);
-            _register.MaintainenceList.Add(new RegisterEntry(vehicle, repairCost));
+            _register.MaintainenceList.Add(new Invoice(vehicle, repairCost));
         }
 
         public string TestDrive(IVehicle vehicle)

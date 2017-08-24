@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Showroom
 {
-    public class RegisterEntry
+    public class Invoice
     {
         public DateTime Date { get; }
         public IVehicle Vehicle { get; }
         public decimal Price { get; }
 
-        public RegisterEntry(IVehicle vehicle, decimal Price)
+        public Invoice(IVehicle vehicle, decimal Price)
         {
             Vehicle = vehicle;
             Date = DateTime.Now;

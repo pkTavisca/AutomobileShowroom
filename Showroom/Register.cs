@@ -6,15 +6,15 @@ namespace Showroom
 {
     public class Register
     {
-        public List<RegisterEntry> SoldList { get; }
-        public List<RegisterEntry> RentedList { get; }
-        public List<RegisterEntry> MaintainenceList { get; }
+        public List<Invoice> SoldList { get; }
+        public List<Invoice> RentedList { get; }
+        public List<Invoice> MaintainenceList { get; }
 
         public Register()
         {
-            SoldList = new List<RegisterEntry>();
-            RentedList = new List<RegisterEntry>();
-            MaintainenceList = new List<RegisterEntry>();
+            SoldList = new List<Invoice>();
+            RentedList = new List<Invoice>();
+            MaintainenceList = new List<Invoice>();
         }
     }
 }
