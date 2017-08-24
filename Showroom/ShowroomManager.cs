@@ -42,41 +42,9 @@ namespace Showroom
         public decimal GetTotalEarningForToday()
         {
             decimal totalSales = 0;
-            totalSales += GetTotalSalesForToday(totalSales);
-            totalSales += GetTotalRentSaleForToday(totalSales);
-            totalSales += GetTotalMaintainenceSaleForToday(totalSales);
-            return totalSales;
-        }
-
-        private decimal GetTotalMaintainenceSaleForToday(decimal totalSales)
-        {
-            foreach (var registerEntry in _register.MaintainenceList)
-            {
-                if (registerEntry.Date == DateTime.Today)
-                    totalSales += registerEntry.Price;
-            }
-
-            return totalSales;
-        }
-
-        private decimal GetTotalRentSaleForToday(decimal totalSales)
-        {
-            foreach (var registerEntry in _register.RentedList)
-            {
-                if (registerEntry.Date == DateTime.Today)
-                    totalSales += registerEntry.Price;
-            }
-
-            return totalSales;
-        }
-
-        private decimal GetTotalSalesForToday(decimal totalSales)
-        {
-            foreach (var registerEntry in _register.SoldList)
-            {
-                if (registerEntry.Date == DateTime.Today)
-                    totalSales += registerEntry.Price;
-            }
+            totalSales += _register.GetTotalSalesForToday();
+            totalSales += _register.GetTotalRentSaleForToday();
+            totalSales += _register.GetTotalMaintainenceSaleForToday();
             return totalSales;
         }
 
