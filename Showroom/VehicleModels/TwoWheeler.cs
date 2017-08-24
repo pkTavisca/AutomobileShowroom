@@ -7,15 +7,15 @@ namespace Showroom.VehicleModels
 {
     public class TwoWheeler : IVehicle
     {
-        public int Id { get; }
+        public int Id { get; set; }
 
-        public string Company { get; }
+        public string Company { get; set; }
 
-        public string Name { get; }
+        public string Name { get; set; }
 
-        public decimal LeasePricePerDay { get; }
+        public decimal LeasePricePerDay { get; set; }
 
-        public decimal SellPrice { get; }
+        public decimal SellPrice { get; set; }
 
         public int CompareTo(IVehicle other)
         {

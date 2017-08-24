@@ -24,5 +24,10 @@ namespace Showroom
             else
                 _vehicles[vehicle]--;
         }
+
+        public int Count()
+        {
+            return _vehicles.Count;
+        }
     }
 }
