@@ -22,7 +22,7 @@ namespace Showroom
             decimal totalSales = 0;
             foreach (var registerEntry in MaintainenceList)
             {
-                if (registerEntry.Date == DateTime.Today)
+                if (registerEntry.Date.Date == DateTime.Today)
                     totalSales += registerEntry.Price;
             }
             return totalSales;
@@ -33,7 +33,7 @@ namespace Showroom
             decimal totalSales = 0;
             foreach (var registerEntry in RentedList)
             {
-                if (registerEntry.Date == DateTime.Today)
+                if (registerEntry.Date.Date == DateTime.Today)
                     totalSales += registerEntry.Price;
             }
             return totalSales;
@@ -42,9 +42,9 @@ namespace Showroom
         public decimal GetTotalSalesForToday()
         {
             decimal totalSales = 0;
-            foreach (var registerEntry in RentedList)
+            foreach (var registerEntry in SoldList)
             {
-                if (registerEntry.Date == DateTime.Today)
+                if (registerEntry.Date.Date == DateTime.Today)
                     totalSales += registerEntry.Price;
             }
             return totalSales;

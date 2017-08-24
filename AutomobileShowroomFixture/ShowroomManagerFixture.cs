@@ -67,9 +67,16 @@ namespace AutomobileShowroomFixture
             Car car1 = new Car() { Id = 1, Name = "Maruti", SellPrice = 100 };
             Car car2 = new Car() { Id = 2, Name = "Maruti", LeasePricePerDay = 10 };
             Car car3 = new Car() { Id = 3, Name = "Maruti" };
+            storage.Add(car1);
+            storage.Add(car2);
             Register register = new Register();
             ShowroomManager manager = new ShowroomManager(storage, register);
 
+            manager.Sell(car1);
+            manager.Rent(car2, 2);
+            manager.SendForMaintainence(car3, 50);
+
+            Assert.Equal(170, manager.GetTotalEarningForToday());
         }
     }
 }
