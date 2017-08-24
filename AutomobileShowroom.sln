@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showroom", "Showroom\Showroom.csproj", "{CB848A05-B40E-4932-8BD2-12C378A841D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomobileShowroomFixture", "AutomobileShowroomFixture\AutomobileShowroomFixture.csproj", "{723D16C7-5320-4224-8174-213EB7F0E01D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{CB848A05-B40E-4932-8BD2-12C378A841D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB848A05-B40E-4932-8BD2-12C378A841D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB848A05-B40E-4932-8BD2-12C378A841D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723D16C7-5320-4224-8174-213EB7F0E01D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723D16C7-5320-4224-8174-213EB7F0E01D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723D16C7-5320-4224-8174-213EB7F0E01D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723D16C7-5320-4224-8174-213EB7F0E01D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
